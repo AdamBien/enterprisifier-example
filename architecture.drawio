@@ -1,0 +1,720 @@
+<mxfile>
+  <diagram name="EnterpriseGreetingFramework Architecture" id="egf-arch-1">
+    <mxGraphModel dx="1200" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="3300" pageHeight="1600" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+        <!-- SWIM LANE CONTAINERS                                            -->
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+
+        <!-- Presentation Lane -->
+        <mxCell id="lane-presentation" value="Presentation" style="swimlane;startSize=40;horizontal=0;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#000000;fontSize=14;fontStyle=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="20" y="20" width="3240" height="150" as="geometry"/>
+        </mxCell>
+
+        <!-- API Lane -->
+        <mxCell id="lane-api" value="API" style="swimlane;startSize=40;horizontal=0;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#000000;fontSize=14;fontStyle=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="20" y="190" width="3240" height="150" as="geometry"/>
+        </mxCell>
+
+        <!-- Application Lane -->
+        <mxCell id="lane-application" value="Application" style="swimlane;startSize=40;horizontal=0;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#000000;fontSize=14;fontStyle=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="20" y="360" width="3240" height="150" as="geometry"/>
+        </mxCell>
+
+        <!-- Domain Lane -->
+        <mxCell id="lane-domain" value="Domain" style="swimlane;startSize=40;horizontal=0;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#000000;fontSize=14;fontStyle=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="20" y="530" width="3240" height="150" as="geometry"/>
+        </mxCell>
+
+        <!-- Infrastructure Lane -->
+        <mxCell id="lane-infrastructure" value="Infrastructure" style="swimlane;startSize=40;horizontal=0;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#000000;fontSize=14;fontStyle=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="20" y="700" width="3240" height="150" as="geometry"/>
+        </mxCell>
+
+        <!-- ACL Lane -->
+        <mxCell id="lane-acl" value="ACL" style="swimlane;startSize=40;horizontal=0;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=#000000;fontSize=14;fontStyle=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="20" y="870" width="3240" height="150" as="geometry"/>
+        </mxCell>
+
+        <!-- Config Lane -->
+        <mxCell id="lane-config" value="Config" style="swimlane;startSize=40;horizontal=0;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#000000;fontSize=14;fontStyle=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="20" y="1040" width="3240" height="150" as="geometry"/>
+        </mxCell>
+
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+        <!-- PRESENTATION LAYER NODES                                        -->
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+
+        <!-- GreetingController — Enterprise (orange) -->
+        <mxCell id="p-controller" value="GreetingController" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=#000000;fontSize=12;fontStyle=0;" vertex="1" parent="lane-presentation">
+          <mxGeometry x="60" y="50" width="180" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- GreetingFacade — Structural (blue) -->
+        <mxCell id="p-facade-iface" value="GreetingFacade" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#000000;fontSize=12;fontStyle=0;" vertex="1" parent="lane-presentation">
+          <mxGeometry x="300" y="50" width="180" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- DefaultGreetingFacadeImpl — Structural (blue) -->
+        <mxCell id="p-facade-impl" value="DefaultGreetingFacadeImpl" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#000000;fontSize=12;fontStyle=0;" vertex="1" parent="lane-presentation">
+          <mxGeometry x="540" y="50" width="200" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+        <!-- API LAYER NODES                                                 -->
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+
+        <!-- GreetingService — Enterprise (orange) -->
+        <mxCell id="a-service" value="GreetingService" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=#000000;fontSize=12;fontStyle=0;" vertex="1" parent="lane-api">
+          <mxGeometry x="60" y="50" width="180" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- GreetingPort — Structural (blue) -->
+        <mxCell id="a-port" value="GreetingPort" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#000000;fontSize=12;fontStyle=0;" vertex="1" parent="lane-api">
+          <mxGeometry x="300" y="50" width="180" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- GreetingRequestDTO — Enterprise (orange) -->
+        <mxCell id="a-req-dto" value="GreetingRequestDTO" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=#000000;fontSize=12;fontStyle=0;" vertex="1" parent="lane-api">
+          <mxGeometry x="540" y="50" width="180" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- GreetingResponseDTO — Enterprise (orange) -->
+        <mxCell id="a-res-dto" value="GreetingResponseDTO" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=#000000;fontSize=12;fontStyle=0;" vertex="1" parent="lane-api">
+          <mxGeometry x="780" y="50" width="180" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+        <!-- APPLICATION LAYER NODES                                         -->
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+
+        <!-- GreetWorldUseCase — Enterprise (orange) -->
+        <mxCell id="app-usecase" value="GreetWorldUseCase" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=#000000;fontSize=12;fontStyle=0;" vertex="1" parent="lane-application">
+          <mxGeometry x="60" y="50" width="170" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- CommandBus — Behavioral (green) -->
+        <mxCell id="app-cmdbus" value="CommandBus" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#000000;fontSize=12;fontStyle=0;" vertex="1" parent="lane-application">
+          <mxGeometry x="280" y="50" width="150" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- GreetCommand — Behavioral (green) -->
+        <mxCell id="app-cmd" value="GreetCommand" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#000000;fontSize=12;fontStyle=0;" vertex="1" parent="lane-application">
+          <mxGeometry x="480" y="50" width="150" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- GreetCommandHandler — Behavioral (green) -->
+        <mxCell id="app-cmdhandler" value="GreetCommandHandler" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#000000;fontSize=12;fontStyle=0;" vertex="1" parent="lane-application">
+          <mxGeometry x="680" y="50" width="175" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- GreetingOrchestrationSaga — Enterprise (orange) -->
+        <mxCell id="app-saga" value="GreetingOrchestrationSaga" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=#000000;fontSize=12;fontStyle=0;" vertex="1" parent="lane-application">
+          <mxGeometry x="910" y="50" width="195" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- GreetingMediator — Behavioral (green) -->
+        <mxCell id="app-mediator" value="GreetingMediator" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#000000;fontSize=12;fontStyle=0;" vertex="1" parent="lane-application">
+          <mxGeometry x="1160" y="50" width="170" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- GreetingValidationHandler — Behavioral (green) -->
+        <mxCell id="app-validation" value="GreetingValidationHandler" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#000000;fontSize=12;fontStyle=0;" vertex="1" parent="lane-application">
+          <mxGeometry x="1385" y="50" width="200" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- GreetingEnrichmentHandler — Behavioral (green) -->
+        <mxCell id="app-enrichment" value="GreetingEnrichmentHandler" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#000000;fontSize=12;fontStyle=0;" vertex="1" parent="lane-application">
+          <mxGeometry x="1640" y="50" width="200" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- GreetingAuditHandler — Behavioral (green) -->
+        <mxCell id="app-audit" value="GreetingAuditHandler" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#000000;fontSize=12;fontStyle=0;" vertex="1" parent="lane-application">
+          <mxGeometry x="1895" y="50" width="185" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- GreetingRequestToCommandMapper — Structural (blue) -->
+        <mxCell id="app-req-mapper" value="GreetingRequestToCommandMapper" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#000000;fontSize=12;fontStyle=0;" vertex="1" parent="lane-application">
+          <mxGeometry x="2140" y="50" width="220" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- GreetingResultToResponseMapper — Structural (blue) -->
+        <mxCell id="app-res-mapper" value="GreetingResultToResponseMapper" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#000000;fontSize=12;fontStyle=0;" vertex="1" parent="lane-application">
+          <mxGeometry x="2420" y="50" width="220" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+        <!-- DOMAIN LAYER NODES                                              -->
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+
+        <!-- GreetingAggregate — Enterprise (orange) -->
+        <mxCell id="d-aggregate" value="GreetingAggregate" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=#000000;fontSize=12;fontStyle=0;" vertex="1" parent="lane-domain">
+          <mxGeometry x="60" y="50" width="170" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- GreetingMessage — Enterprise (orange) -->
+        <mxCell id="d-message" value="GreetingMessage" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=#000000;fontSize=12;fontStyle=0;" vertex="1" parent="lane-domain">
+          <mxGeometry x="285" y="50" width="160" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- GreetingSubject — Enterprise (orange) -->
+        <mxCell id="d-subject" value="GreetingSubject" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=#000000;fontSize=12;fontStyle=0;" vertex="1" parent="lane-domain">
+          <mxGeometry x="500" y="50" width="160" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- GreetingStrategy — Behavioral (green) -->
+        <mxCell id="d-strategy-iface" value="GreetingStrategy" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#000000;fontSize=12;fontStyle=0;" vertex="1" parent="lane-domain">
+          <mxGeometry x="715" y="50" width="155" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- InformalGreetingStrategy — Behavioral (green) -->
+        <mxCell id="d-informal" value="InformalGreetingStrategy" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#000000;fontSize=12;fontStyle=0;" vertex="1" parent="lane-domain">
+          <mxGeometry x="925" y="50" width="190" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- FormalGreetingStrategy — Behavioral (green) -->
+        <mxCell id="d-formal" value="FormalGreetingStrategy" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#000000;fontSize=12;fontStyle=0;" vertex="1" parent="lane-domain">
+          <mxGeometry x="1170" y="50" width="185" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- DomainEventBus — Behavioral (green) -->
+        <mxCell id="d-eventbus" value="DomainEventBus" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#000000;fontSize=12;fontStyle=0;" vertex="1" parent="lane-domain">
+          <mxGeometry x="1410" y="50" width="160" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- GreetingRequestedEvent — Behavioral (green) -->
+        <mxCell id="d-evt-requested" value="GreetingRequestedEvent" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#000000;fontSize=12;fontStyle=0;" vertex="1" parent="lane-domain">
+          <mxGeometry x="1625" y="50" width="185" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- GreetingRenderedEvent — Behavioral (green) -->
+        <mxCell id="d-evt-rendered" value="GreetingRenderedEvent" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#000000;fontSize=12;fontStyle=0;" vertex="1" parent="lane-domain">
+          <mxGeometry x="1865" y="50" width="180" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- GreetingPublishedEvent — Behavioral (green) -->
+        <mxCell id="d-evt-published" value="GreetingPublishedEvent" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#000000;fontSize=12;fontStyle=0;" vertex="1" parent="lane-domain">
+          <mxGeometry x="2100" y="50" width="185" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- GreetingState — Behavioral (green) -->
+        <mxCell id="d-state" value="GreetingState" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#000000;fontSize=12;fontStyle=0;" vertex="1" parent="lane-domain">
+          <mxGeometry x="2340" y="50" width="150" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- Specification — Structural (blue) -->
+        <mxCell id="d-spec" value="Specification" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#000000;fontSize=12;fontStyle=0;" vertex="1" parent="lane-domain">
+          <mxGeometry x="2545" y="50" width="150" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- GreetingMemento — Behavioral (green) -->
+        <mxCell id="d-memento" value="GreetingMemento" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#000000;fontSize=12;fontStyle=0;" vertex="1" parent="lane-domain">
+          <mxGeometry x="2750" y="50" width="160" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- GreetingVisitor — Behavioral (green) -->
+        <mxCell id="d-visitor" value="GreetingVisitor" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#000000;fontSize=12;fontStyle=0;" vertex="1" parent="lane-domain">
+          <mxGeometry x="2965" y="50" width="155" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+        <!-- INFRASTRUCTURE LAYER NODES                                      -->
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+
+        <!-- ConsoleOutputAdapter — Structural (blue) -->
+        <mxCell id="i-console" value="ConsoleOutputAdapter" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#000000;fontSize=12;fontStyle=0;" vertex="1" parent="lane-infrastructure">
+          <mxGeometry x="60" y="50" width="185" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- OutputPort — Structural (blue) -->
+        <mxCell id="i-outport" value="OutputPort" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#000000;fontSize=12;fontStyle=0;" vertex="1" parent="lane-infrastructure">
+          <mxGeometry x="300" y="50" width="150" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- GreetingRepository — Enterprise (orange) -->
+        <mxCell id="i-repo" value="GreetingRepository" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=#000000;fontSize=12;fontStyle=0;" vertex="1" parent="lane-infrastructure">
+          <mxGeometry x="505" y="50" width="170" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- GreetingEventStore — Enterprise (orange) -->
+        <mxCell id="i-eventstore" value="GreetingEventStore" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=#000000;fontSize=12;fontStyle=0;" vertex="1" parent="lane-infrastructure">
+          <mxGeometry x="730" y="50" width="170" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- GreetingUnitOfWork — Enterprise (orange) -->
+        <mxCell id="i-uow" value="GreetingUnitOfWork" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=#000000;fontSize=12;fontStyle=0;" vertex="1" parent="lane-infrastructure">
+          <mxGeometry x="955" y="50" width="170" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- GreetingStrategyFactory — Creational (yellow) -->
+        <mxCell id="i-factory" value="GreetingStrategyFactory" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#000000;fontSize=12;fontStyle=0;" vertex="1" parent="lane-infrastructure">
+          <mxGeometry x="1180" y="50" width="190" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- AbstractGreetingStrategyFactoryFactory — Creational (yellow) -->
+        <mxCell id="i-factory-factory" value="AbstractGreetingStrategyFactoryFactory" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#000000;fontSize=11;fontStyle=0;" vertex="1" parent="lane-infrastructure">
+          <mxGeometry x="1430" y="50" width="240" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- GreetingServiceProxy — Structural (blue) -->
+        <mxCell id="i-proxy" value="GreetingServiceProxy" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#000000;fontSize=12;fontStyle=0;" vertex="1" parent="lane-infrastructure">
+          <mxGeometry x="1730" y="50" width="175" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- LoggingGreetingDecorator — Structural (blue) -->
+        <mxCell id="i-logging" value="LoggingGreetingDecorator" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#000000;fontSize=12;fontStyle=0;" vertex="1" parent="lane-infrastructure">
+          <mxGeometry x="1965" y="50" width="195" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- MetricsGreetingDecorator — Structural (blue) -->
+        <mxCell id="i-metrics" value="MetricsGreetingDecorator" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#000000;fontSize=12;fontStyle=0;" vertex="1" parent="lane-infrastructure">
+          <mxGeometry x="2220" y="50" width="190" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- GreetingFlyweightPool — Creational (yellow) -->
+        <mxCell id="i-flyweight" value="GreetingFlyweightPool" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#000000;fontSize=12;fontStyle=0;" vertex="1" parent="lane-infrastructure">
+          <mxGeometry x="2470" y="50" width="180" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- GreetingDSLInterpreter — Behavioral (green) -->
+        <mxCell id="i-dsl" value="GreetingDSLInterpreter" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#000000;fontSize=12;fontStyle=0;" vertex="1" parent="lane-infrastructure">
+          <mxGeometry x="2710" y="50" width="185" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- GreetingIterator — Behavioral (green) -->
+        <mxCell id="i-iterator" value="GreetingIterator" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#000000;fontSize=12;fontStyle=0;" vertex="1" parent="lane-infrastructure">
+          <mxGeometry x="2955" y="50" width="160" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+        <!-- ACL LAYER NODES                                                 -->
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+
+        <!-- ExternalGreetingModel — Structural (blue) -->
+        <mxCell id="acl-ext-model" value="ExternalGreetingModel" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#000000;fontSize=12;fontStyle=0;" vertex="1" parent="lane-acl">
+          <mxGeometry x="60" y="50" width="185" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- ExternalGreetingTranslator — Structural (blue) -->
+        <mxCell id="acl-ext-trans" value="ExternalGreetingTranslator" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#000000;fontSize=12;fontStyle=0;" vertex="1" parent="lane-acl">
+          <mxGeometry x="305" y="50" width="200" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- InternalGreetingTranslator — Structural (blue) -->
+        <mxCell id="acl-int-trans" value="InternalGreetingTranslator" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#000000;fontSize=12;fontStyle=0;" vertex="1" parent="lane-acl">
+          <mxGeometry x="565" y="50" width="200" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- GreetingACLFacade — Structural (blue) -->
+        <mxCell id="acl-facade" value="GreetingACLFacade" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#000000;fontSize=12;fontStyle=0;" vertex="1" parent="lane-acl">
+          <mxGeometry x="825" y="50" width="175" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+        <!-- CONFIG LAYER NODES                                              -->
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+
+        <!-- GreetingModule — Enterprise (orange) -->
+        <mxCell id="cfg-module" value="GreetingModule" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=#000000;fontSize=12;fontStyle=0;" vertex="1" parent="lane-config">
+          <mxGeometry x="60" y="50" width="160" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- GreetingRegistry — Enterprise (orange) -->
+        <mxCell id="cfg-registry" value="GreetingRegistry" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=#000000;fontSize=12;fontStyle=0;" vertex="1" parent="lane-config">
+          <mxGeometry x="280" y="50" width="160" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- GreetingServiceLocator — Enterprise (orange) -->
+        <mxCell id="cfg-locator" value="GreetingServiceLocator" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=#000000;fontSize=12;fontStyle=0;" vertex="1" parent="lane-config">
+          <mxGeometry x="500" y="50" width="185" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- DefaultGreetingServiceImpl — Enterprise (orange) -->
+        <mxCell id="cfg-svc-impl" value="DefaultGreetingServiceImpl" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=#000000;fontSize=12;fontStyle=0;" vertex="1" parent="lane-config">
+          <mxGeometry x="745" y="50" width="200" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+        <!-- EDGES — PRESENTATION LAYER                                      -->
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+
+        <!-- GreetingController → GreetingFacade -->
+        <mxCell id="e-ctrl-facade" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=11;fontStyle=0;endArrow=block;endFill=1;shadow=0;" edge="1" source="p-controller" target="p-facade-iface" parent="lane-presentation">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- GreetingFacade → DefaultGreetingFacadeImpl (implements) -->
+        <mxCell id="e-facade-impl" value="implements" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=10;fontStyle=0;endArrow=block;endFill=0;dashed=1;shadow=0;" edge="1" source="p-facade-iface" target="p-facade-impl" parent="lane-presentation">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+        <!-- EDGES — PRESENTATION → API (cross-lane)                        -->
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+
+        <!-- DefaultGreetingFacadeImpl → GreetingService -->
+        <mxCell id="e-facade-svc" value="calls" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=10;fontStyle=0;endArrow=block;endFill=1;shadow=0;" edge="1" source="p-facade-impl" target="a-service" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- GreetingController → GreetingRequestDTO -->
+        <mxCell id="e-ctrl-dto" value="creates" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=10;fontStyle=0;endArrow=block;endFill=1;shadow=0;" edge="1" source="p-controller" target="a-req-dto" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+        <!-- EDGES — API LAYER                                               -->
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+
+        <!-- GreetingService → GreetingPort -->
+        <mxCell id="e-svc-port" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=11;fontStyle=0;endArrow=block;endFill=1;shadow=0;" edge="1" source="a-service" target="a-port" parent="lane-api">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- GreetingService → GreetingRequestDTO -->
+        <mxCell id="e-svc-reqdto" value="uses" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=10;fontStyle=0;endArrow=block;endFill=1;shadow=0;" edge="1" source="a-service" target="a-req-dto" parent="lane-api">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- GreetingService → GreetingResponseDTO -->
+        <mxCell id="e-svc-resdto" value="returns" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=10;fontStyle=0;endArrow=block;endFill=1;shadow=0;" edge="1" source="a-service" target="a-res-dto" parent="lane-api">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+        <!-- EDGES — API → APPLICATION (cross-lane)                          -->
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+
+        <!-- GreetingPort → GreetWorldUseCase -->
+        <mxCell id="e-port-usecase" value="invokes" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=10;fontStyle=0;endArrow=block;endFill=1;shadow=0;" edge="1" source="a-port" target="app-usecase" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- GreetingRequestDTO → GreetingRequestToCommandMapper -->
+        <mxCell id="e-reqdto-mapper" value="maps" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=10;fontStyle=0;endArrow=block;endFill=1;shadow=0;" edge="1" source="a-req-dto" target="app-req-mapper" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- GreetingResponseDTO ← GreetingResultToResponseMapper -->
+        <mxCell id="e-resmapper-resdto" value="produces" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=10;fontStyle=0;endArrow=block;endFill=1;shadow=0;" edge="1" source="app-res-mapper" target="a-res-dto" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+        <!-- EDGES — APPLICATION LAYER                                       -->
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+
+        <!-- GreetWorldUseCase → CommandBus -->
+        <mxCell id="e-usecase-cmdbus" value="dispatches" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=10;fontStyle=0;endArrow=block;endFill=1;shadow=0;" edge="1" source="app-usecase" target="app-cmdbus" parent="lane-application">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- CommandBus → GreetCommand -->
+        <mxCell id="e-cmdbus-cmd" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=11;fontStyle=0;endArrow=block;endFill=1;shadow=0;" edge="1" source="app-cmdbus" target="app-cmd" parent="lane-application">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- CommandBus → GreetCommandHandler -->
+        <mxCell id="e-cmdbus-handler" value="routes to" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=10;fontStyle=0;endArrow=block;endFill=1;shadow=0;" edge="1" source="app-cmdbus" target="app-cmdhandler" parent="lane-application">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- GreetCommandHandler → GreetingOrchestrationSaga -->
+        <mxCell id="e-handler-saga" value="triggers" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=10;fontStyle=0;endArrow=block;endFill=1;shadow=0;" edge="1" source="app-cmdhandler" target="app-saga" parent="lane-application">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- GreetingOrchestrationSaga → GreetingMediator -->
+        <mxCell id="e-saga-mediator" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=11;fontStyle=0;endArrow=block;endFill=1;shadow=0;" edge="1" source="app-saga" target="app-mediator" parent="lane-application">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- GreetingMediator → GreetingValidationHandler -->
+        <mxCell id="e-mediator-validation" value="delegates" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=10;fontStyle=0;endArrow=block;endFill=1;shadow=0;" edge="1" source="app-mediator" target="app-validation" parent="lane-application">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- GreetingMediator → GreetingEnrichmentHandler -->
+        <mxCell id="e-mediator-enrichment" value="delegates" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=10;fontStyle=0;endArrow=block;endFill=1;shadow=0;" edge="1" source="app-mediator" target="app-enrichment" parent="lane-application">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- GreetingMediator → GreetingAuditHandler -->
+        <mxCell id="e-mediator-audit" value="delegates" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=10;fontStyle=0;endArrow=block;endFill=1;shadow=0;" edge="1" source="app-mediator" target="app-audit" parent="lane-application">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- GreetingRequestToCommandMapper → GreetCommand -->
+        <mxCell id="e-req-mapper-cmd" value="produces" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=10;fontStyle=0;endArrow=block;endFill=1;shadow=0;" edge="1" source="app-req-mapper" target="app-cmd" parent="lane-application">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+        <!-- EDGES — APPLICATION → DOMAIN (cross-lane)                       -->
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+
+        <!-- GreetCommandHandler → GreetingAggregate -->
+        <mxCell id="e-handler-aggregate" value="invokes" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=10;fontStyle=0;endArrow=block;endFill=1;shadow=0;" edge="1" source="app-cmdhandler" target="d-aggregate" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- GreetingValidationHandler → Specification -->
+        <mxCell id="e-validation-spec" value="uses" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=10;fontStyle=0;endArrow=block;endFill=1;shadow=0;" edge="1" source="app-validation" target="d-spec" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- GreetingEnrichmentHandler → GreetingMessage -->
+        <mxCell id="e-enrichment-msg" value="enriches" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=10;fontStyle=0;endArrow=block;endFill=1;shadow=0;" edge="1" source="app-enrichment" target="d-message" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+        <!-- EDGES — DOMAIN LAYER                                            -->
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+
+        <!-- GreetingAggregate → GreetingMessage -->
+        <mxCell id="e-agg-msg" value="produces" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=10;fontStyle=0;endArrow=block;endFill=1;shadow=0;" edge="1" source="d-aggregate" target="d-message" parent="lane-domain">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- GreetingAggregate → GreetingSubject -->
+        <mxCell id="e-agg-subj" value="has" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=10;fontStyle=0;endArrow=block;endFill=1;shadow=0;" edge="1" source="d-aggregate" target="d-subject" parent="lane-domain">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- GreetingAggregate → GreetingStrategy -->
+        <mxCell id="e-agg-strat" value="uses" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=10;fontStyle=0;endArrow=block;endFill=1;shadow=0;" edge="1" source="d-aggregate" target="d-strategy-iface" parent="lane-domain">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- GreetingStrategy → InformalGreetingStrategy (implements) -->
+        <mxCell id="e-strat-informal" value="impl" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=10;fontStyle=0;endArrow=block;endFill=0;dashed=1;shadow=0;" edge="1" source="d-strategy-iface" target="d-informal" parent="lane-domain">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- GreetingStrategy → FormalGreetingStrategy (implements) -->
+        <mxCell id="e-strat-formal" value="impl" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=10;fontStyle=0;endArrow=block;endFill=0;dashed=1;shadow=0;" edge="1" source="d-strategy-iface" target="d-formal" parent="lane-domain">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- GreetingAggregate → DomainEventBus (publishes) -->
+        <mxCell id="e-agg-eventbus" value="publishes" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=10;fontStyle=0;endArrow=block;endFill=1;shadow=0;" edge="1" source="d-aggregate" target="d-eventbus" parent="lane-domain">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- DomainEventBus → GreetingRequestedEvent -->
+        <mxCell id="e-eventbus-req" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=11;fontStyle=0;endArrow=block;endFill=1;shadow=0;" edge="1" source="d-eventbus" target="d-evt-requested" parent="lane-domain">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- DomainEventBus → GreetingRenderedEvent -->
+        <mxCell id="e-eventbus-rendered" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=11;fontStyle=0;endArrow=block;endFill=1;shadow=0;" edge="1" source="d-eventbus" target="d-evt-rendered" parent="lane-domain">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- DomainEventBus → GreetingPublishedEvent -->
+        <mxCell id="e-eventbus-published" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=11;fontStyle=0;endArrow=block;endFill=1;shadow=0;" edge="1" source="d-eventbus" target="d-evt-published" parent="lane-domain">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- GreetingAggregate → GreetingState -->
+        <mxCell id="e-agg-state" value="transitions" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=10;fontStyle=0;endArrow=block;endFill=1;shadow=0;" edge="1" source="d-aggregate" target="d-state" parent="lane-domain">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- GreetingAggregate → GreetingMemento -->
+        <mxCell id="e-agg-memento" value="saves" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=10;fontStyle=0;endArrow=block;endFill=1;shadow=0;" edge="1" source="d-aggregate" target="d-memento" parent="lane-domain">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- GreetingMessage → GreetingVisitor -->
+        <mxCell id="e-msg-visitor" value="accepts" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=10;fontStyle=0;endArrow=block;endFill=1;shadow=0;" edge="1" source="d-message" target="d-visitor" parent="lane-domain">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+        <!-- EDGES — DOMAIN → INFRASTRUCTURE (cross-lane)                   -->
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+
+        <!-- GreetingAggregate → GreetingRepository -->
+        <mxCell id="e-agg-repo" value="persisted by" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=10;fontStyle=0;endArrow=block;endFill=1;shadow=0;" edge="1" source="d-aggregate" target="i-repo" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- DomainEventBus → GreetingEventStore -->
+        <mxCell id="e-eventbus-store" value="stores to" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=10;fontStyle=0;endArrow=block;endFill=1;shadow=0;" edge="1" source="d-eventbus" target="i-eventstore" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- GreetingStrategy → GreetingStrategyFactory (created by) -->
+        <mxCell id="e-strat-factory" value="created by" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=10;fontStyle=0;endArrow=block;endFill=1;shadow=0;" edge="1" source="d-strategy-iface" target="i-factory" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- GreetingMessage → ConsoleOutputAdapter -->
+        <mxCell id="e-msg-console" value="output via" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=10;fontStyle=0;endArrow=block;endFill=1;shadow=0;" edge="1" source="d-message" target="i-console" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+        <!-- EDGES — INFRASTRUCTURE LAYER                                    -->
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+
+        <!-- ConsoleOutputAdapter → OutputPort (implements) -->
+        <mxCell id="e-console-outport" value="implements" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=10;fontStyle=0;endArrow=block;endFill=0;dashed=1;shadow=0;" edge="1" source="i-console" target="i-outport" parent="lane-infrastructure">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- GreetingRepository → GreetingUnitOfWork -->
+        <mxCell id="e-repo-uow" value="within" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=10;fontStyle=0;endArrow=block;endFill=1;shadow=0;" edge="1" source="i-repo" target="i-uow" parent="lane-infrastructure">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- GreetingStrategyFactory → AbstractGreetingStrategyFactoryFactory -->
+        <mxCell id="e-factory-ff" value="produced by" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=10;fontStyle=0;endArrow=block;endFill=1;shadow=0;" edge="1" source="i-factory" target="i-factory-factory" parent="lane-infrastructure">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- GreetingServiceProxy → LoggingGreetingDecorator -->
+        <mxCell id="e-proxy-logging" value="wraps" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=10;fontStyle=0;endArrow=block;endFill=1;shadow=0;" edge="1" source="i-proxy" target="i-logging" parent="lane-infrastructure">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- LoggingGreetingDecorator → MetricsGreetingDecorator -->
+        <mxCell id="e-logging-metrics" value="chains to" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=10;fontStyle=0;endArrow=block;endFill=1;shadow=0;" edge="1" source="i-logging" target="i-metrics" parent="lane-infrastructure">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- GreetingFlyweightPool → GreetingDSLInterpreter -->
+        <mxCell id="e-fly-dsl" value="provides" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=10;fontStyle=0;endArrow=block;endFill=1;shadow=0;" edge="1" source="i-flyweight" target="i-dsl" parent="lane-infrastructure">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- GreetingDSLInterpreter → GreetingIterator -->
+        <mxCell id="e-dsl-iter" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=11;fontStyle=0;endArrow=block;endFill=1;shadow=0;" edge="1" source="i-dsl" target="i-iterator" parent="lane-infrastructure">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+        <!-- EDGES — INFRASTRUCTURE → ACL (ACL boundary crossing)           -->
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+
+        <!-- ConsoleOutputAdapter → GreetingACLFacade (ACL boundary) -->
+        <mxCell id="e-console-acl" value="crosses ACL" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#d79b00;fontColor=#d79b00;fontSize=10;fontStyle=1;endArrow=block;endFill=1;dashed=1;shadow=0;" edge="1" source="i-console" target="acl-facade" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- GreetingRepository → ExternalGreetingTranslator (ACL boundary) -->
+        <mxCell id="e-repo-acl-trans" value="crosses ACL" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#d79b00;fontColor=#d79b00;fontSize=10;fontStyle=1;endArrow=block;endFill=1;dashed=1;shadow=0;" edge="1" source="i-repo" target="acl-ext-trans" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+        <!-- EDGES — ACL LAYER                                               -->
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+
+        <!-- ExternalGreetingModel → ExternalGreetingTranslator -->
+        <mxCell id="e-extmodel-extrans" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=11;fontStyle=0;endArrow=block;endFill=1;shadow=0;" edge="1" source="acl-ext-model" target="acl-ext-trans" parent="lane-acl">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- ExternalGreetingTranslator → InternalGreetingTranslator -->
+        <mxCell id="e-extrans-intrans" value="translates" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=10;fontStyle=0;endArrow=block;endFill=1;shadow=0;" edge="1" source="acl-ext-trans" target="acl-int-trans" parent="lane-acl">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- InternalGreetingTranslator → GreetingACLFacade -->
+        <mxCell id="e-intrans-aclfacade" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=11;fontStyle=0;endArrow=block;endFill=1;shadow=0;" edge="1" source="acl-int-trans" target="acl-facade" parent="lane-acl">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+        <!-- EDGES — ACL → CONFIG (cross-lane)                               -->
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+
+        <!-- GreetingACLFacade → GreetingServiceLocator -->
+        <mxCell id="e-aclfacade-locator" value="resolves via" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=10;fontStyle=0;endArrow=block;endFill=1;shadow=0;" edge="1" source="acl-facade" target="cfg-locator" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+        <!-- EDGES — CONFIG LAYER                                            -->
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+
+        <!-- GreetingModule → GreetingRegistry -->
+        <mxCell id="e-module-registry" value="registers" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=10;fontStyle=0;endArrow=block;endFill=1;shadow=0;" edge="1" source="cfg-module" target="cfg-registry" parent="lane-config">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- GreetingRegistry → GreetingServiceLocator -->
+        <mxCell id="e-registry-locator" value="populates" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=10;fontStyle=0;endArrow=block;endFill=1;shadow=0;" edge="1" source="cfg-registry" target="cfg-locator" parent="lane-config">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- GreetingServiceLocator → DefaultGreetingServiceImpl -->
+        <mxCell id="e-locator-svcimpl" value="provides" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=10;fontStyle=0;endArrow=block;endFill=1;shadow=0;" edge="1" source="cfg-locator" target="cfg-svc-impl" parent="lane-config">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- DefaultGreetingServiceImpl → GreetingService (API wires up) -->
+        <mxCell id="e-svcimpl-apisvc" value="wires" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=10;fontStyle=0;endArrow=block;endFill=1;shadow=0;" edge="1" source="cfg-svc-impl" target="a-service" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+        <!-- LEGEND                                                           -->
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+
+        <!-- Legend container -->
+        <mxCell id="legend-box" value="Legend" style="swimlane;startSize=30;fillColor=#ffffff;strokeColor=#000000;fontColor=#000000;fontSize=13;fontStyle=1;whiteSpace=wrap;html=1;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="2760" y="1220" width="480" height="220" as="geometry"/>
+        </mxCell>
+
+        <!-- Creational (yellow) -->
+        <mxCell id="leg-creational" value="Creational Pattern" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;arcSize=10;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#000000;fontSize=12;fontStyle=0;" vertex="1" parent="legend-box">
+          <mxGeometry x="20" y="45" width="200" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- Structural (blue) -->
+        <mxCell id="leg-structural" value="Structural Pattern" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;arcSize=10;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#000000;fontSize=12;fontStyle=0;" vertex="1" parent="legend-box">
+          <mxGeometry x="250" y="45" width="200" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- Behavioral (green) -->
+        <mxCell id="leg-behavioral" value="Behavioral Pattern" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;arcSize=10;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#000000;fontSize=12;fontStyle=0;" vertex="1" parent="legend-box">
+          <mxGeometry x="20" y="105" width="200" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- Enterprise (orange) -->
+        <mxCell id="leg-enterprise" value="Enterprise Pattern" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;arcSize=10;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=#000000;fontSize=12;fontStyle=0;" vertex="1" parent="legend-box">
+          <mxGeometry x="250" y="105" width="200" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- ACL boundary arrow legend -->
+        <mxCell id="leg-acl-label" value="ACL boundary crossing" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;overflow=hidden;fontColor=#000000;fontSize=11;fontStyle=1;" vertex="1" parent="legend-box">
+          <mxGeometry x="120" y="163" width="200" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="leg-acl-arrow" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#d79b00;fontColor=#d79b00;fontSize=10;fontStyle=1;endArrow=block;endFill=1;dashed=1;shadow=0;" edge="1" source="leg-acl-label" target="leg-acl-label" parent="legend-box">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="30" y="178"/>
+              <mxPoint x="110" y="178"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- small dashed line sample for ACL legend -->
+        <mxCell id="leg-acl-line" value="" style="endArrow=block;endFill=1;dashed=1;strokeColor=#d79b00;strokeWidth=2;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="legend-box">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="25" y="178" as="sourcePoint"/>
+            <mxPoint x="110" y="178" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
